@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8" />
+	<script>
+/*写入cookie
+		var now=new Date();
+		now.setHours(now.getHours()+2);
+		document.cookie=
+			"username=zhangdong;expires="+now.toGMTString();
+*/
+/*读取cookie的值*/
+		var username=document.cookie.split("=")[1];
+								//"username=zhangdong"
+		document.write(username);
+	</script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

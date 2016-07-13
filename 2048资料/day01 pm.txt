@@ -1,0 +1,37 @@
+cookie: 在客户端本地硬盘，持久保存用户数据的文件
+何时使用: 只要需要持久保存的用户数据，都要存在cookie中
+何时起作用: 只要访问颁发cookie的网站时，都会自动携带该网站的cookie发送到服务器
+  强调:Chrome禁用了本地cookie 
+       用Firefox测试
+如何读写: 
+    写入: 
+document.cookie="cookie变量名=值;expires="+date.toGMTString();
+查看cookie: 选项->高级->隐私
+    读取: document.cookie.split("=")[1]
+
+2048中: 
+   start方法开始: 
+    if(document.cookie.indexOf("=")!=-1){
+      this.top=document.cookie.split("=")[1];
+    }
+   moveXXXX方法的判断游戏结束的if内部
+    if(this.score>this.top){
+      var now=new Date();
+      now.setFullYear(now.getFullYear()+1);
+      document.cookie="top1="+this.score+
+                      ";expires="+now.toGMTString();
+    }
+   updateView方法中: 
+    document.getElementById("topScore").innerHTML=this.top;
+
+
+
+
+
+
+
+
+
+
+
+
